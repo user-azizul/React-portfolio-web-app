@@ -1,10 +1,18 @@
-import React from "react";
+import Aos from "aos";
+import React, { useEffect } from "react";
+import Header from "./Components/Header";
+import Footer from "./Components/Footer";
 
 function App() {
+  useEffect(() => {
+    Aos.init();
+  }, []);
   return (
-    <div>
-      <h1 className="text-indigo-800">Portfolio app</h1>
-    </div>
+    <>
+      <Header />
+      <main> content</main>
+      <Footer />
+    </>
   );
 }
 
