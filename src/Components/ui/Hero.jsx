@@ -52,7 +52,7 @@ function Hero() {
             <p
               data-aos="fade-left"
               data-aos-duration="1500"
-              className="flex gap-2 mt-10 text-smallTextColor font-medium text-sm leading-7 "
+              className="flex gap-2 mt-10 sm:pl-10 sm:pr-5 text-smallTextColor font-medium text-sm leading-7 "
             >
               <span>
                 <i class="ri-apps-2-line"></i>
@@ -117,12 +117,39 @@ function Hero() {
               <img src={heroImg} alt="" />
             </figure>
           </div>
-          <div className="md:basis-1/5 flex justify-between text-center mt-10 flex-warp gap-3 md:mt-0 mad:flex-col md:justify-end md:text-end">
-          
-          <h2 className="text-headingColor font-bold text-3xl">
-            <CountUp start={0} end={6} duration={2}suffix="+" />
-            <h4>Year of experience</h4>
-          </h2>
+          <div className="md:basis-1/5 flex justify-between text-center mt-10 flex-warp gap-3 md:mt-0 md:flex-col md:justify-end md:text-end">
+            <div className="mb-10">
+              <h2 className="text-headingColor font-bold text-3xl">
+                <CountUp start={0} end={6} duration={2} suffix="+" />
+                <h4 className="text-headingColor font-semibold text-lg">
+                  Year of experience
+                </h4>
+              </h2>
+            </div>
+            <div className="mb-10">
+              <h2 className="text-headingColor font-bold text-3xl">
+                <CountUp start={50} end={100} duration={2} suffix="%" />
+                <h4 className="text-headingColor font-semibold text-lg">
+                  Success Rate
+                </h4>
+              </h2>
+            </div>
+            <div className="mb-10">
+              <h2 className="text-headingColor font-bold text-3xl">
+                <CountUp start={100} end={150} duration={2} suffix="+" />
+                <h4 className="text-headingColor font-semibold text-lg">
+                  Happy Clients
+                </h4>
+              </h2>
+            </div>
+            <div className="mb-10">
+              <h2 className="text-headingColor font-bold text-3xl">
+                <CountUp start={200} end={249} duration={2} suffix="+" />
+                <h4 className="text-headingColor font-semibold text-lg">
+                  Project Completed
+                </h4>
+              </h2>
+            </div>
           </div>
         </div>
       </div>
