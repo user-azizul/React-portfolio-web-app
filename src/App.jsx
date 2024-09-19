@@ -4,18 +4,20 @@ import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import Hero from "./Components/ui/Hero";
 import Service from "./Components/ui/Service";
+import Portfolio from "./Components/ui/Portfolio";
 
 function App() {
   useEffect(() => {
     Aos.init();
   }, []);
   return (
-    <div className="">
+    <div>
       <Header />
       <main>
         {" "}
         <Hero />
         <Service />
+        <Portfolio />
       </main>
       <Footer />
     </div>

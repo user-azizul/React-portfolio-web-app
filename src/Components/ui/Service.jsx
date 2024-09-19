@@ -7,7 +7,7 @@ import appImg from "../../assets/images/apps.png";
 function Service() {
   return (
     <section id="services">
-      <div className="container lg:pt-5">
+      <div className="myContainer lg:pt-5">
         <div className="text-center">
           <h2 className="text-headingColor mb-5 font-extrabold text-4xl">
             What I do
