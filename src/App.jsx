@@ -10,11 +10,11 @@ function App() {
   useEffect(() => {
     Aos.init();
   }, []);
+
   return (
     <div>
       <Header />
       <main>
-        {" "}
         <Hero />
         <Service />
         <Portfolio />
