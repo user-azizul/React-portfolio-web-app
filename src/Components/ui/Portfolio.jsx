@@ -49,7 +49,7 @@ function Portfolio() {
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`text-smallTextColor border border-solid border-smallTextColor py-2 px-4 rounded-lg ${
+                className={`text-smallTextColor border border-solid border-smallTextColor sm:py-2 sm:px-4 py-1 px-2 rounded-lg ${
                   selectedCategory === category ? "bg-smallTextColor text-white" : ""
                 }`}
               >

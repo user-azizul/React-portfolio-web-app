@@ -1,28 +1,51 @@
-import React, { useState,useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect,useCallback } from "react";
 import "../App.css"; // Ensure you import your CSS
 
 function Header() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const headerRef= useRef(null);
-  const sticyHeader =()=>{
-    window.addEventListener('scroll',()=>{
-      if(document.body.scrollTop >80 || document.documentElement.scrollTop >80){
-        headerRef.current.classList.add('sticky_header')
-      }else{
-        headerRef.current.classList.remove('sticky_header')
+  const headerRef = useRef(null);
+
+
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+        headerRef.current.classList.add('sticky_header');
+      } else {
+        headerRef.current.classList.remove('sticky_header');
       }
-    })
-  }
-  useEffect(()=>{
-    sticyHeader();
-    return window.removeEventListener('scroll',sticyHeader)
-  })
+    };
+  
+    window.addEventListener('scroll', handleScroll);
+    
+    // Cleanup function to remove the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []); // Empty dependency array to ensure the event listener is only added once
+  
 
-
-  // Function to toggle sidebar
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
+
+  const handleClick = useCallback((e) => {
+    e.preventDefault();
+    toggleSidebar();
+  
+    const targetAttr = e.target.getAttribute('href');
+    const targetElement = document.querySelector(targetAttr);
+    const offset = 80;
+  
+    if (targetElement) {
+      const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+      window.scrollTo({
+        top: elementPosition - offset,
+        behavior: "smooth",
+      });
+    }
+  }, [toggleSidebar]);
+  
 
   return (
     <header ref={headerRef} className="w-full h-20 leading-[80px] flex items-center">
@@ -75,9 +98,7 @@ function Header() {
 
       {/* Mobile Sidebar */}
       <div
-        className={`fixed inset-0 z-50 bg-headingColor bg-opacity-75 transition-transform transform ${
-          isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-        } md:hidden`}
+        className={`fixed inset-0 z-50 bg-headingColor bg-opacity-75 transition-transform transform ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"} md:hidden`}
       >
         <div className="w-64 bg-white h-full p-6 shadow-lg">
           <button
@@ -89,10 +110,10 @@ function Header() {
           </button>
           <nav>
             <ul className="flex flex-col gap-2">
-              <li><a className="text-headingColor font-semibold" href="#service" onClick={toggleSidebar}>Service</a></li>
-              <li><a className="text-headingColor font-semibold" href="#about" onClick={toggleSidebar}>About</a></li>
-              <li><a className="text-headingColor font-semibold" href="#portfolio" onClick={toggleSidebar}>Portfolio</a></li>
-              <li><a className="text-headingColor font-semibold" href="#contact" onClick={toggleSidebar}>Contact</a></li>
+              <li><a onClick={handleClick} className="text-headingColor font-semibold" href="#service">Service</a></li>
+              <li><a onClick={handleClick} className="text-headingColor font-semibold" href="#about">About</a></li>
+              <li><a onClick={handleClick} className="text-headingColor font-semibold" href="#portfolio">Portfolio</a></li>
+              <li><a onClick={handleClick} className="text-headingColor font-semibold" href="#contact">Contact</a></li>
             </ul>
           </nav>
         </div>

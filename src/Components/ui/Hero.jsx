@@ -6,9 +6,9 @@ function Hero() {
   return (
     <section className="pt-0" id="about">
       <div className="myContainer pt-14">
-        <div className="flex sm:flex-col md:flex-row items-center justify-center">
+        <div className="flex flex-col md:flex-row items-center justify-center">
           {/* Hero Left Content */}
-          <div className="w-full md:basis-1/2">
+          <div className="w-full md:w-1/2 sm:text-start">
             <h5
               data-aos="fade-right"
               data-aos-duration="1500"
@@ -19,7 +19,7 @@ function Hero() {
             <h1
               data-aos="fade-up"
               data-aos-duration="1500"
-              className="text-headingColor font-extrabold text-3xl sm:text-4xl leading-9 sm:leading-10 mt-5"
+              className="text-headingColor font-extrabold text-2xl sm:text-3xl md:text-4xl leading-8 sm:leading-9 md:leading-10 mt-4"
             >
               I'm Azizul Haque <br />
               Software Developer
@@ -28,7 +28,7 @@ function Hero() {
               data-aos="fade-up"
               data-aos-duration="1800"
               data-aos-delay="200"
-              className="flex items-center gap-6 mt-7"
+              className="flex flex-col sm:flex-row flex-wrap  gap-4 mt-6"
             >
               <a href="#contact">
                 <button
@@ -38,9 +38,9 @@ function Hero() {
                   <i className="ri-mail-line"></i> Hire Me
                 </button>
               </a>
-              <a href="#contact">
+              <a href="#portfolio">
                 <button
-                  className="text-smallTextColor font-semibold text-base border-b border-solid border-smallTextColor"
+                  className="text-smallTextColor font-semibold text-base border-b border-smallTextColor"
                   type="button"
                 >
                   See Portfolio
@@ -50,7 +50,7 @@ function Hero() {
             <p
               data-aos="fade-left"
               data-aos-duration="1500"
-              className="flex gap-2 mt-10 sm:pl-10 sm:pr-5 text-smallTextColor font-medium text-sm leading-7"
+              className="flex gap-2 mt-8 sm:pl-10 sm:pr-5 text-smallTextColor font-medium text-sm leading-7 px-4 sm:px-0"
             >
               <span>
                 <i className="ri-apps-2-line"></i>
@@ -59,7 +59,7 @@ function Hero() {
               Molestiae aliquam unde consectetur quisquam numquam sequi,
               deserunt quis quasi officia iste.
             </p>
-            <div className="flex items-center gap-9 mt-10">
+            <div className="flex items-center gap-6 mt-8">
               <span className="text-smallTextColor text-sm">Follow me:</span>
               <span>
                 <a className="text-smallTextColor text-lg" href="#youtube">
@@ -85,37 +85,49 @@ function Hero() {
           </div>
 
           {/* Hero Right Image */}
-          <div className="basis-1/3 mt-10 sm:mt-0">
+          <div className="w-full md:w-1/3 mt-8 sm:mt-0">
             <figure className="flex items-center justify-center">
-              <img src={heroImg} alt="Hero Illustration" />
+              <img
+                src={heroImg}
+                alt="Hero Illustration"
+                className="w-full h-auto"
+              />
             </figure>
           </div>
 
           {/* Experience and Stats */}
-          <div className="md:basis-1/5 flex justify-between text-center mt-10 flex-wrap gap-3 md:mt-0 md:flex-col md:justify-end md:text-end">
-            <div className="mb-10">
-              <h2 className="text-headingColor font-bold text-3xl">
+          <div className="w-full md:w-1/5 flex justify-between text-center mt-8 md:mt-0 flex-wrap gap-3 md:flex-col md:justify-end md:text-end">
+            <div className="mb-8">
+              <h2 className="text-headingColor font-bold text-2xl sm:text-3xl">
                 <CountUp start={0} end={6} duration={2} suffix="+" />
               </h2>
-              <p className="text-headingColor font-semibold text-lg">Years of Experience</p>
+              <p className="text-headingColor font-semibold text-base sm:text-lg">
+                Years of Experience
+              </p>
             </div>
-            <div className="mb-10">
-              <h2 className="text-headingColor font-bold text-3xl">
+            <div className="mb-8">
+              <h2 className="text-headingColor font-bold text-2xl sm:text-3xl">
                 <CountUp start={50} end={100} duration={2} suffix="%" />
               </h2>
-              <p className="text-headingColor font-semibold text-lg">Success Rate</p>
+              <p className="text-headingColor font-semibold text-base sm:text-lg">
+                Success Rate
+              </p>
             </div>
-            <div className="mb-10">
-              <h2 className="text-headingColor font-bold text-3xl">
+            <div className="mb-8">
+              <h2 className="text-headingColor font-bold text-2xl sm:text-3xl">
                 <CountUp start={100} end={150} duration={2} suffix="+" />
               </h2>
-              <p className="text-headingColor font-semibold text-lg">Happy Clients</p>
+              <p className="text-headingColor font-semibold text-base sm:text-lg">
+                Happy Clients
+              </p>
             </div>
-            <div className="mb-10">
-              <h2 className="text-headingColor font-bold text-3xl">
+            <div className="mb-8">
+              <h2 className="text-headingColor font-bold text-2xl sm:text-3xl">
                 <CountUp start={200} end={249} duration={2} suffix="+" />
               </h2>
-              <p className="text-headingColor font-semibold text-lg">Projects Completed</p>
+              <p className="text-headingColor font-semibold text-base sm:text-lg">
+                Projects Completed
+              </p>
             </div>
           </div>
         </div>
